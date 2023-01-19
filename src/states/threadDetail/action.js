@@ -7,7 +7,7 @@ const ActionType = {
   ADD_COMMENT: 'ADD_COMMENT'
 }
 
-function receiveThreadDetailActionCreator (threadDetail) {
+function receiveThreadDetailActionCreator(threadDetail) {
   return {
     type: ActionType.RECEIVE_THREAD_DETAIL,
     payload: {
@@ -16,13 +16,13 @@ function receiveThreadDetailActionCreator (threadDetail) {
   }
 }
 
-function clearThreadDetailActionCreator () {
+function clearThreadDetailActionCreator() {
   return {
     type: ActionType.CLEAR_THREAD_DETAIL
   }
 }
 
-function asyncReceiveThreadDetail (threadId) {
+function asyncReceiveThreadDetail(threadId) {
   return async (dispatch) => {
     dispatch(showLoading())
     try {
@@ -35,7 +35,7 @@ function asyncReceiveThreadDetail (threadId) {
   }
 }
 
-function addThreadCommentActionCreator (comment) {
+function addThreadCommentActionCreator(comment) {
   return {
     type: ActionType.ADD_COMMENT,
     payload: {
@@ -44,14 +44,12 @@ function addThreadCommentActionCreator (comment) {
   }
 }
 
-function asyncAddThreadComment ({ threadId, content }) {
+function asyncAddThreadComment({ threadId, content }) {
   return async (dispatch) => {
     dispatch(showLoading())
     try {
       const comment = await api.createComment({ threadId, content })
       dispatch(addThreadCommentActionCreator(comment))
-      const threadDetail = await api.getThreadDetail(threadId)
-      dispatch(receiveThreadDetailActionCreator(threadDetail))
     } catch (error) {
       alert(error.message)
     }
