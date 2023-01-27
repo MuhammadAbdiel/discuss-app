@@ -6,7 +6,7 @@ const ActionType = {
   ADD_THREAD: 'ADD_THREAD'
 }
 
-function receiveThreadsActionCreator(threads) {
+function receiveThreadsActionCreator (threads) {
   return {
     type: ActionType.RECEIVE_THREADS,
     payload: {
@@ -15,7 +15,7 @@ function receiveThreadsActionCreator(threads) {
   }
 }
 
-function addThreadActionCreator(thread) {
+function addThreadActionCreator (thread) {
   return {
     type: ActionType.ADD_THREAD,
     payload: {
@@ -24,7 +24,7 @@ function addThreadActionCreator(thread) {
   }
 }
 
-function asyncAddThread({ title, body, category }) {
+function asyncAddThread ({ title, body, category }) {
   return async (dispatch) => {
     dispatch(showLoading())
     try {
@@ -37,4 +37,9 @@ function asyncAddThread({ title, body, category }) {
   }
 }
 
-export { ActionType, receiveThreadsActionCreator, addThreadActionCreator, asyncAddThread }
+export {
+  ActionType,
+  receiveThreadsActionCreator,
+  addThreadActionCreator,
+  asyncAddThread
+}

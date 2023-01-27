@@ -2,8 +2,7 @@
     "env": {
         "browser": true,
         "es2021": true,
-        "node": true,
-        "cypress/globals": true
+        "node": true
     },
     "extends": [
         "plugin:react/recommended",
@@ -15,9 +14,7 @@
         "sourceType": "module"
     },
     "plugins": [
-        "react",
-        "react-hooks",
-        "cypress"
+        "react"
     ],
     "rules": {
         "no-console": "off",
@@ -38,7 +35,6 @@
         "eqeqeq": "off",
         "space-before-blocks": "off",
         "semi": "off",
-        "space-before-function-paren": "off",
-        "no-undef": "off"
+        "space-before-function-paren": "off"
     }
 }
