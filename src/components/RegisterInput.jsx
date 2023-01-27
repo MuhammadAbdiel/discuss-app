@@ -11,15 +11,15 @@ function RegisterInput({ register }) {
     <form>
       <div className='wrap-input'>
         <label>Name</label>
-        <input type='text' value={name} onChange={onNameChange} />
+        <input type='text' value={name} onChange={onNameChange} placeholder='Name' />
       </div>
       <div className='wrap-input'>
         <label>Email</label>
-        <input type='email' value={email} onChange={onEmailChange} />
+        <input type='email' value={email} onChange={onEmailChange} placeholder='Email' />
       </div>
       <div className='wrap-input'>
         <label>Password</label>
-        <input type='password' value={password} onChange={onPasswordChange} />
+        <input type='password' value={password} onChange={onPasswordChange} placeholder='Password' />
       </div>
       <button type='button' className='btn-register' onClick={() => register({ name, email, password })}>
         Register

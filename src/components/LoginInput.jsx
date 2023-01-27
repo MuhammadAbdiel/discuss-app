@@ -10,11 +10,11 @@ function LoginInput({ login }) {
     <form>
       <div className='wrap-input'>
         <label>Email</label>
-        <input type='email' value={email} onChange={onEmailChange} />
+        <input type='email' value={email} onChange={onEmailChange} placeholder='Email' />
       </div>
       <div className='wrap-input'>
         <label>Password</label>
-        <input type='password' value={password} onChange={onPasswordChange} />
+        <input type='password' value={password} onChange={onPasswordChange} placeholder='Password' />
       </div>
       <button type='button' className='btn-login' onClick={() => login({ email, password })}>
         Login
