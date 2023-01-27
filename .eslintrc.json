@@ -35,6 +35,7 @@
         "eqeqeq": "off",
         "space-before-blocks": "off",
         "semi": "off",
-        "space-before-function-paren": "off"
+        "space-before-function-paren": "off",
+        "no-undef": "off"
     }
 }
