@@ -6,7 +6,7 @@
  *  - should dispatch action and call alert correctly when data fetching failed
  */
 
-import { asyncPreloadProcess } from './action'
+import { asyncPreloadProcess, setIsPreloadActionCreator } from './action'
 import api from '../../utils/api'
 import { hideLoading, showLoading } from 'react-redux-loading-bar'
 import { setAuthUserActionCreator } from '../authUser/action'
@@ -49,6 +49,7 @@ describe('asyncPreloadProcess thunk', () => {
     // dispatch is called with correct action
     expect(dispatch).toHaveBeenCalledWith(showLoading())
     expect(dispatch).toHaveBeenCalledWith(setAuthUserActionCreator(fakeAuthUserResponse))
+    expect(dispatch).toHaveBeenCalledWith(setIsPreloadActionCreator(false))
     expect(dispatch).toHaveBeenCalledWith(hideLoading())
   })
 
@@ -60,15 +61,14 @@ describe('asyncPreloadProcess thunk', () => {
     // mock dispatch
     const dispatch = jest.fn()
 
-    // mock alert
-    window.alert = jest.fn()
-
     // Action
     await asyncPreloadProcess()(dispatch)
 
     // Assert
     // dispatch is called with correct action
     expect(dispatch).toHaveBeenCalledWith(showLoading())
+    expect(dispatch).toHaveBeenCalledWith(setAuthUserActionCreator(null))
+    expect(dispatch).toHaveBeenCalledWith(setIsPreloadActionCreator(false))
     expect(dispatch).toHaveBeenCalledWith(hideLoading())
   })
 })
