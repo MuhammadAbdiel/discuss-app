@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom'
 import ThreadsList from '../components/ThreadsList'
 import { asyncPopulateUsersAndThreads } from '../states/shared/action'
 import { BsFillPlusCircleFill } from 'react-icons/bs'
+import MainPage from '../components/styled/MainPage'
+import MainPageHeadingOne from '../components/styled/MainPageHeadingOne'
 
 function HomePage() {
   const { threads = [], users = [], authUser } = useSelector((states) => states)
@@ -21,13 +23,13 @@ function HomePage() {
   }))
 
   return (
-    <div className='main-page'>
-      <h1>Discussion Available</h1>
+    <MainPage>
+      <MainPageHeadingOne>Discussion Available</MainPageHeadingOne>
       <ThreadsList threads={threadList} />
       <Link to='/new' className='btn-plus'>
         <BsFillPlusCircleFill size={60} />
       </Link>
-    </div>
+    </MainPage>
   )
 }
 

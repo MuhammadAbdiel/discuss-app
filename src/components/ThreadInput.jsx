@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import useInput from '../hooks/useInput'
+import ThreadInputWrapper from './styled/ThreadInputWrapper'
 
 function ThreadInput({ addThread }) {
   const [title, onTitleChange] = useInput('')
@@ -8,7 +9,7 @@ function ThreadInput({ addThread }) {
   const [body, onBodyChange] = useInput('')
 
   return (
-    <div className='wrapper'>
+    <ThreadInputWrapper>
       <div className='wrap-input'>
         <label>Title</label>
         <input type='text' value={title} onChange={onTitleChange} />
@@ -24,7 +25,7 @@ function ThreadInput({ addThread }) {
       <button onClick={() => addThread({ title, category, body })} className='btn-create'>
         Create
       </button>
-    </div>
+    </ThreadInputWrapper>
   )
 }
 

@@ -3,6 +3,8 @@ import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import ThreadInput from '../components/ThreadInput'
 import { asyncAddThread } from '../states/threads/action'
+import MainPage from '../components/styled/MainPage'
+import MainPageHeadingOne from '../components/styled/MainPageHeadingOne'
 
 function AddThreadPage() {
   const dispatch = useDispatch()
@@ -15,10 +17,10 @@ function AddThreadPage() {
   }
 
   return (
-    <div className='main-page'>
-      <h1>Create New Discussion</h1>
+    <MainPage>
+      <MainPageHeadingOne>Create New Discussion</MainPageHeadingOne>
       <ThreadInput addThread={onAddThread} />
-    </div>
+    </MainPage>
   )
 }
 

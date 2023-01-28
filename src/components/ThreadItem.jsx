@@ -2,18 +2,19 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { postedAt } from '../utils'
 import { Link } from 'react-router-dom'
+import CardThread from './styled/CardThread'
 
 function ThreadItem({ id, title, body, category, createdAt, totalComments, user, authUser }) {
   return (
     <Link to={`/threads/${id}`}>
-      <div className='card-thread'>
+      <CardThread>
         <p className='card-thread-title'>{title}</p>
         <p dangerouslySetInnerHTML={{ __html: body.slice(0, 300) + (body.length > 300 ? '...' : '') }}></p>
         <p className='child-desc'>
           Made by {user.name} - {postedAt(createdAt)} - {totalComments} comments
         </p>
         <p className='category'>#{category}</p>
-      </div>
+      </CardThread>
     </Link>
   )
 }
