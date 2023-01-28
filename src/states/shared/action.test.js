@@ -1,9 +1,9 @@
 /**
- *  test scenario for asyncPopulateUsersAndThreads thunk
+ *  test scenario for asyncPopulateUsersAndThreads
  *
- *  - asyncPopulateUsersAndThreads thunk
- *  - should dispatch action correctly when data fetching success
- *  - should dispatch action and call alert correctly when data fetching failed
+ * - asyncPopulateUsersAndThreads thunk
+ *   - should dispatch action correctly when data fetching success
+ *   - should dispatch action and call alert correctly when data fetching failed
  */
 
 import { asyncPopulateUsersAndThreads } from './action'

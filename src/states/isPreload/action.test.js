@@ -1,9 +1,9 @@
 /**
- *  test scenario for asyncPreloadProcess thunk
+ *  test scenario for asyncPreloadProcess
  *
- *  - asyncPreloadProcess thunk
- *  - should dispatch action correctly when data fetching success
- *  - should dispatch action and call alert correctly when data fetching failed
+ * - asyncPreloadProcess thunk
+ *   - should dispatch action correctly when data fetching success
+ *   - should dispatch action and call alert correctly when data fetching failed
  */
 
 import { asyncPreloadProcess, setIsPreloadActionCreator } from './action'

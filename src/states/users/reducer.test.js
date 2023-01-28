@@ -1,9 +1,9 @@
 /**
  * test scenario for usersReducer
  *
- *  - usersReducer function
- *  - should return the initial state when given by unknown action
- *  - should return the threads when given by RECEIVE_USERS action
+ * - usersReducer function
+ *   - should return the initial state when given by unknown action
+ *   - should return the threads when given by RECEIVE_USERS action
  *
  */
 

@@ -1,7 +1,7 @@
 /**
  * test scenario for RegisterInput component
  *
- *   - RegisterInput component
+ * - RegisterInput component
  *   - should handle name typing correctly
  *   - should handle email typing correctly
  *   - should handle password typing correctly
